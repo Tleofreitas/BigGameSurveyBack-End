@@ -13,6 +13,10 @@ public class Record {
     private String name;
     private Integer age;
     private Instant moment;
+
+    // Relacionamento MUITOS para UM com Game
+    @ManyToOne
+    @JoinColumn(name = "game_id") // Chave estrangeira do banco
     private Game game;
 
     public Record(){}

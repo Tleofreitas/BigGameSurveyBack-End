@@ -14,7 +14,13 @@ public class Game {
     private Long id;
     private String title;
     private Platform platform;
+
+    // Relacionamento MUITOS para UM com Genre
+    @ManyToOne
+    @JoinColumn(name = "genre_id") // Chave estrangeira do banco
     private Genre genre;
+
+    @OneToMany(mappedBy = "game")
     private List<Record> records = new ArrayList<>();
 
     public Game(){}
